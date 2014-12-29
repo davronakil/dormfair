@@ -13,3 +13,6 @@ gem 'spring',        group: :development
 
 gem 'devise', '~> 3.4.1'
 gem 'jquery-rails', "~> 2.3.0"
+gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'font-awesome-sass-rails', '~> 3.0.2.2'
+gem 'acts_as_shopping_cart', '~> 0.2.2'

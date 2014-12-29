@@ -5,28 +5,75 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
+		<meta name="description" content="DormFair is a localized classified ads website exclusively for Universities"/>
+		<meta name="keywords" content="DormFair, dorm fair, GWU, classifieds, sell, buy, exchange, barter, books, furniture, college, dorm, dormitory, campus, craigslist, gwu craigslist, craigs list, foggy bottom, gw, george washington, george washington university, gwsb, df, room, rent, events, vern, mount vernon, foxhall road, thurston, guthridge, lafayette, clark, hensley, somers, cole, crawford, gelman"/>
+		<meta property="og:title" content="DormFair | Simple University Classifieds" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="/images/df.png" />
+		<meta property="og:site_name" content="DormFair | Simple University Classifieds" />
+		<meta property="og:description"
+		      content="DormFair is a localized classified ads platform for universities" />
+
+
+		<!-- main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/style.css">
+
+		<!-- iOS optimize -->
+		<meta name="viewport" content="width=460">
+
+		<!-- favicon -->
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
 </head>
 <body>
+<div class="container">
 
-<% flash.each do |name, msg| %>
-	<%= content_tag(:div, msg, class: "alert alert=#{name}") %>
-	<% end %>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/"><img src="/images/nav_logo.png" alt="GW DormFair" width="89px" height="28px" /></a>
+	    </div>
 
-	<% if user_signed_in? %>
-		<ul>
-			<li><%= link_to 'Post an Ad', new_post_path %></li>
-			<li><%= link_to 'Account', edit_user_registration_path %></li>
-			<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-		</ul>
-		<% else %>
-		<ul>
-			<li><%= link_to 'Sign up', new_user_registration_path %></li>
-			<li><%= link_to 'Sign in', new_user_session_path %></li>
-		</ul>
-	<% end %>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	      	<% if user_signed_in? %>
+				<li><%= link_to 'Post an Ad', new_post_path %></li>
+				<li><%= link_to 'Account', edit_user_registration_path %></li>
+				<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+			<% else %>
+				<li><%= link_to 'Sign up', new_user_registration_path %></li>
+				<li><%= link_to 'Sign in', new_user_session_path %></li>
+			<% end %>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
+
+		<div class="alert alert-info alert-dismissible" role="alert" id="SA_message">
+		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  <img src="/images/salogo200.png" align="right" width="180" height="180" class="img-circle salogo">
+		  <h4>Welcome from the GW Student Association</h4> We are proud to introduce DormFair for GWU, a place to help students trade textbooks and other college supplies among each other using their official GW Emails. By <%= link_to 'signing up with your .edu email', new_user_registration_path %>, you will help your peers save money on textbooks, get more out of your used ones, and make moving in &amp; moving out much less painful, all while improving the averall GWU experience.<br /><br />
+
+		<font class="signed">Chris Evans, Avra Bossov, Omeed Firouzi</font><br />
+		GW Student Association
+		</div>
+
 
 
 <%= yield %>
 
+</div>
 </body>
 </html>
