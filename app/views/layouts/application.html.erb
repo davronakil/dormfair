@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DormFair | #{schol_name_full}</title>
+  <title>DormFair</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -60,7 +60,7 @@
 	  </div>
 	</nav>
 
-
+<% if current_page?('/') %>
 		<div class="alert alert-info alert-dismissible" role="alert" id="SA_message">
 		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 		  <img src="/images/salogo200.png" align="right" width="180" height="180" class="img-circle salogo">
@@ -69,6 +69,7 @@
 		<font class="signed">Chris Evans, Avra Bossov, Omeed Firouzi</font><br />
 		GW Student Association
 		</div>
+<% end %>
 
 
 
