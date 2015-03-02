@@ -16,9 +16,9 @@ A version for the New York University (NYU) is available at http://www.dormfair.
 == HOW YOU CAN HELP
 
 If you are a student or a developer or both, you can help the project with any of the following
-** Development of the Universal version (for all universities [ending with .edu])
-** Marketing the site at your school
-** Funding (stock options available)
+* Development of the Universal version (for all universities [ending with .edu])
+* Marketing the site at your school
+* Funding (stock options available)
 
 == CONTACT ME
 You can email me at support@dormfair.com or use the contact form on the website. 
